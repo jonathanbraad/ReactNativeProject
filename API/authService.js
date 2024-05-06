@@ -1,8 +1,7 @@
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import app from './firebaseConfig'; // Import the Firebase app instance
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from './firebaseConfig'; // Import the initialized auth instance
 
-const auth = getAuth(app);
-
+// Function to handle user login
 const loginUser = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -12,6 +11,7 @@ const loginUser = async (email, password) => {
   }
 };
 
+// Function to handle user registration
 const registerUser = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);

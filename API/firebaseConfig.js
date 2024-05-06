@@ -2,11 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 import { getAuth } from 'firebase/auth';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAVM0k1pj1-zIP2mCuVgXjLLfS5SlkCbbE",
   authDomain: "nutrifit-d6ea0.firebaseapp.com",
@@ -17,10 +13,10 @@ const firebaseConfig = {
   measurementId: "G-3J55H9JTY8"
 };
 
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Analytics only if supported
 let analytics;
 (async () => {
   if (await isSupported()) {
@@ -28,5 +24,7 @@ let analytics;
   }
 })();
 
+// Initialize Authentication
 const auth = getAuth(app);
 
+export { app, auth, analytics };
