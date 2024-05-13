@@ -14,16 +14,10 @@ const styles = StyleSheet.create({
   footerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 10,  // Good vertical padding for touchability
-    paddingHorizontal: 20,  // Horizontal padding to keep buttons from the edges
-    backgroundColor: '#f5f5f5',
-    borderTopColor: '#ccc',  // Light grey border for subtle separation
-    borderTopWidth: 1,  // Only a thin line
-    shadowColor: '#000',  // Shadow for elevation effect
-    shadowOffset: { width: 0, height: -2 },  // Shadow positioned slightly above the footer
-    shadowOpacity: 0.1,  // Slightly visible
-    shadowRadius: 1.5,  // Soft shadow edges
-    elevation: 4,  // Elevation for Android (similar effect to shadow)
+    alignItems: 'center', // Center align items horizontally
+    backgroundColor: '#f5f5f5', // Light grey background color
+    paddingVertical: 50,
+    paddingHorizontal: 20,
   }
 });
 
