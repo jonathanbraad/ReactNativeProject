@@ -1,4 +1,4 @@
-import { db } from './firebaseConfig'; // Using the initialized db instance from firebaseConfig
+import { db } from '../firebaseConfig'; // Using the initialized db instance from firebaseConfig
 
 // Function to add a user to Firebase Realtime Database
 export const addUser = (userId, name, email) => {

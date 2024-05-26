@@ -5,8 +5,7 @@ import LoginScreen from './Screens/LoginScreen';
 import HomeScreen from './Screens/HomeScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 import PlanningScreen from './Screens/PlanningScreen';
-
-import '/API/firebaseConfig'; // Ensure this path is correct
+import './firebaseConfig'; // Ensure this path is correct
 
 const Stack = createNativeStackNavigator();
 

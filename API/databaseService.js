@@ -1,4 +1,4 @@
-import { db } from './firebaseConfig';
+import { db } from '../firebaseConfig';
 
 // Function to write user data to the Realtime Database
 const writeUserData = async (userId, data) => {

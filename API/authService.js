@@ -1,4 +1,4 @@
-import { auth, db } from './firebaseConfig';
+import { auth, db } from '../firebaseConfig';
 
 // Function to handle user login
 const loginUser = async (email, password) => {
