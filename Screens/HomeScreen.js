@@ -5,14 +5,13 @@ import Footer from '../Components/Footer';
 
 const HomeScreen = ({ navigation }) => {
   return (
-<View style={styles.container}>
+<View style={styles.mainContainer}>
       <Header
         onLogin={() => navigation.navigate('Login')} // Define the navigation action for the login button
-        onCreateAccount={() => navigation.navigate('CreateAccount')} // Define the navigation action for the create account button
+        onCreateAccount={() => navigation.navigate('Register')} // Define the navigation action for the create account button
       />
-      <View style={styles.content}>
-        <Text style={styles.welcomeText}>Welcome to the Home Page!</Text>
-        <Button title="Go Back to Login" onPress={() => navigation.replace('Login')} />
+      <View style={styles.container}>
+        <Text style={styles.welcomeText}>Welcome!</Text>
       </View>
       <Footer
         onHome={() => navigation.navigate('Home')} // Define the navigation action for the home button
@@ -23,6 +22,9 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1, // Ensures the container fills the whole screen
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

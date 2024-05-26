@@ -40,7 +40,7 @@ const LoginScreen = ({ navigation }) => {
             {/* Display an error message if login fails */}
             {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
             <Button title="Log In" onPress={handleLogin} />
-            <Button title="Go to Register" onPress={() => navigation.navigate('Register')} />
+            <Button title="Create new account" onPress={() => navigation.navigate('Register')} />
 
         </View>
     );

@@ -4,7 +4,7 @@ import { View, Button, StyleSheet } from 'react-native';
 const Header = ({ onLogin, onCreateAccount }) => {
   return (
     <View style={styles.headerContainer}>
-      <Button title="Log in" onPress={onLogin} />
+      <Button title="Change account" onPress={onLogin} />
       <Button title="Create account" onPress={onCreateAccount} />
     </View>
   );

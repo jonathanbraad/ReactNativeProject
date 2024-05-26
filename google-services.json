@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "693598253099",
+    "project_id": "nutrifit-d6ea0",
+    "storage_bucket": "nutrifit-d6ea0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693598253099:android:ea979c35c441928c0e3a6e",
+        "android_client_info": {
+          "package_name": "com.cphbusiness.NutriFit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693598253099-ogsmoh6nrsh4v6en8h853qqblb9gqcii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5jErV3_wvHidrXvjaI7OISLxt42COGeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693598253099-ogsmoh6nrsh4v6en8h853qqblb9gqcii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

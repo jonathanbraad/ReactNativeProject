@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { registerUser } from '../API/authService'; // Make sure the path matches your directory structure
 
+
 const RegisterScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleRegister = async () => {
         try {
-            const user = await registerUser(email, password);
+            // Pass name as additional data along with email and password
+            const user = await registerUser(email, password, { name });
             console.log("User registered:", user);
-            navigation.replace('Home');  // Navigate to home screen after registration
+            // Navigate to the Home screen after successful registration
+            navigation.replace('Home');
         } catch (error) {
+            // Handle registration errors
             setErrorMessage(error.message);
         }
     };
@@ -20,6 +25,12 @@ const RegisterScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text>Register</Text>
+            <TextInput
+                placeholder="Name"
+                value={name}
+                onChangeText={setName}
+                style={styles.input}
+            />
             <TextInput
                 placeholder="Email"
                 value={email}

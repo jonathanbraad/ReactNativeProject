@@ -9,7 +9,37 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "firebase": {
+        "apiKey": "AIzaSyAVM0k1pj1-zIP2mCuVgXjLLfS5SlkCbbE",
+        "authDomain": "nutrifit-d6ea0.firebaseapp.com",
+        "projectId": "nutrifit-d6ea0",
+        "storageBucket": "nutrifit-d6ea0.appspot.com",
+        "messagingSenderId": "693598253099",
+        "appId": "1:693598253099:web:594a3615bcce54440e3a6e",
+        "measurementId": "G-3J55H9JTY8"
+      },
+      "android": {
+        "googleServicesFile": "./google-services.json",
+        "package": "com.cphbusiness.NutriFit"
+      },
+      "ios": {
+        "googleServicesFile": "./GoogleService-Info.plist",
+        "bundleIdentifier": "com.mycorp.myapp"
+      },
+      "plugins": [
+        "@react-native-firebase/app",
+        "@react-native-firebase/auth",
+        "@react-native-firebase/crashlytics",
+        [
+          "expo-build-properties",
+          {
+            "ios": {
+              "useFrameworks": "static"
+            }
+          }
+        ]
+      ]
     },
     "assetBundlePatterns": [
       "**/*"
@@ -21,7 +51,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.cphbusiness.NutriFit"
     },
     "web": {
       "favicon": "./assets/favicon.png"

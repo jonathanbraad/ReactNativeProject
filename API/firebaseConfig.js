@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 import { getAuth } from 'firebase/auth';
+import 'firebase/database';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -12,6 +13,10 @@ const firebaseConfig = {
   appId: "1:693598253099:web:594a3615bcce54440e3a6e",
   measurementId: "G-3J55H9JTY8"
 };
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -26,5 +31,6 @@ let analytics;
 
 // Initialize Authentication
 const auth = getAuth(app);
+const db = firebase.database();
 
-export { app, auth, analytics };
+export { app, db, auth, analytics };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Footer = ({ onHome, onPlanning }) => {
   return (
