@@ -3,7 +3,6 @@ package com.cphbusiness.NutriFit
 import android.app.Application
 import android.content.res.Configuration
 import androidx.annotation.NonNull
-
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
 import com.facebook.react.ReactNativeHost
@@ -15,9 +14,12 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
-
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
+
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage
+import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage
+import io.invertase.firebase.database.ReactNativeFirebaseDatabasePackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -25,9 +27,11 @@ class MainApplication : Application(), ReactApplication {
         this,
         object : DefaultReactNativeHost(this) {
           override fun getPackages(): List<ReactPackage> {
-            // Packages that cannot be autolinked yet can be added manually here, for example:
-            // packages.add(new MyReactNativePackage());
-            return PackageList(this).packages
+            val packages = PackageList(this).packages.toMutableList()
+            packages.add(ReactNativeFirebaseAppPackage())
+            packages.add(ReactNativeFirebaseAuthPackage())
+            packages.add(ReactNativeFirebaseDatabasePackage())
+            return packages
           }
 
           override fun getJSMainModuleName(): String = ".expo/.virtual-metro-entry"
@@ -49,7 +53,6 @@ class MainApplication : Application(), ReactApplication {
       ReactFeatureFlags.unstable_useRuntimeSchedulerAlways = false
     }
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-      // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
     }
     if (BuildConfig.DEBUG) {
