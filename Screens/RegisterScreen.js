@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { registerUser } from '../API/authService'; // Make sure the path matches your directory structure
-
+import { registerUser } from '../API/authService'; // Ensure the path matches your directory structure
 
 const RegisterScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');

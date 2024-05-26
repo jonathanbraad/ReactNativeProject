@@ -8,10 +8,10 @@ import HomeScreen from './Screens/HomeScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 import PlanningScreen from './Screens/PlanningScreen';
 
-// Firebase imports
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+// Firebase imports (Removed the old firebase imports)
+import { firebase } from '@react-native-firebase/app'; // Ensure correct import
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAVM0k1pj1-zIP2mCuVgXjLLfS5SlkCbbE",
@@ -22,6 +22,10 @@ const firebaseConfig = {
   appId: "1:693598253099:web:594a3615bcce54440e3a6e",
   measurementId: "G-3J55H9JTY8"
 };
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 const Stack = createNativeStackNavigator();
 

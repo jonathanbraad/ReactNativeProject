@@ -1,28 +1,21 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from './firebaseConfig';
-import firestore from '@react-native-firebase/firestore';
-import firebase from 'firebase/app';
-import 'firebase/database';  // Import the Firebase database module
-
-
+import auth from '@react-native-firebase/auth';
+import { db } from './firebaseConfig';
 
 // Function to handle user login
 const loginUser = async (email, password) => {
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const userCredential = await auth().signInWithEmailAndPassword(email, password);
     return userCredential.user;
   } catch (error) {
     throw error;
   }
 };
 
-
-// Function to handle user registration and create a Firestore document
 // Function to handle user registration and create a Realtime Database entry
 const registerUser = async (email, password, additionalData) => {
   try {
     // Authenticate the user
-    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+    const userCredential = await auth().createUserWithEmailAndPassword(email, password);
     const user = userCredential.user;
 
     // Add additional user information to Firebase Realtime Database

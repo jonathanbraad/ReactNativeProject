@@ -1,9 +1,7 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics, isSupported } from "firebase/analytics";
-import { getAuth } from 'firebase/auth';
-import 'firebase/database';
+import { firebase } from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import database from '@react-native-firebase/database';
 
-// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAVM0k1pj1-zIP2mCuVgXjLLfS5SlkCbbE",
   authDomain: "nutrifit-d6ea0.firebaseapp.com",
@@ -11,26 +9,15 @@ const firebaseConfig = {
   storageBucket: "nutrifit-d6ea0.appspot.com",
   messagingSenderId: "693598253099",
   appId: "1:693598253099:web:594a3615bcce54440e3a6e",
-  measurementId: "G-3J55H9JTY8"
+  measurementId: "G-3J55H9JTY8",
+  databaseURL: "https://nutrifit-d6ea0-default-rtdb.firebaseio.com"
 };
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const authInstance = auth();
+const databaseInstance = database();
 
-// Initialize Analytics only if supported
-let analytics;
-(async () => {
-  if (await isSupported()) {
-    analytics = getAnalytics(app);
-  }
-})();
-
-// Initialize Authentication
-const auth = getAuth(app);
-const db = firebase.database();
-
-export { app, db, auth, analytics };
+export { firebase, authInstance as auth, databaseInstance as db };
